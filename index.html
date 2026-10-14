@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090f">
+  <meta name="description" content="Portfólio de desenvolvimento web e software.">
+  <title>Seu Nome — Dev Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Voltar ao início"><span class="brand-mark">{ }</span><span>dev<span class="accent">.folio</span></span></a>
+    <nav class="nav" id="nav" aria-label="Navegação principal">
+      <a href="#about">Sobre</a><a href="#stack">Tecnologias</a><a href="#projects">Projetos</a><a href="#contact">Contato</a>
+    </nav>
+    <a class="top-cta" href="#projects">Explorar projetos <span>↗</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="status-dot"></span> DESENVOLVEDOR EM FORMAÇÃO</div>
+        <h1>Ideias viram<br><span class="gradient-text">código<span class="cursor">_</span></span><br>por aqui.</h1>
+        <p class="hero-sub">Oi, eu sou <strong data-config="name">Seu Nome</strong>. Estou construindo minha trajetória em desenvolvimento de software, um projeto e um novo aprendizado de cada vez.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Ver projetos <span>↘</span></a>
+          <a class="button button-ghost" data-link="github" href="https://github.com/" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+        </div>
+        <div class="hero-meta"><span><i class="meta-line"></i> BRASIL</span><span>BACKEND · DESENVOLVIMENTO WEB</span></div>
+      </div>
+      <div class="hero-art reveal" aria-label="Ilustração abstrata de código">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="planet"><div class="planet-core">&lt;/&gt;</div><span class="planet-shine"></span></div>
+        <div class="float-card card-code"><div class="code-card-head"><span class="card-dot"></span><span>building.exe</span><span class="card-live">RUNNING</span></div><div class="code-lines"><i></i><i></i><i></i><i></i></div></div>
+        <div class="float-card card-terminal"><div class="terminal-head"><b></b><b></b><b></b></div><code><span class="term-green">➜</span> git status<br><span class="term-muted">working tree clean</span><br><span class="term-green">➜</span> build something<span class="blink">_</span></code></div>
+        <div class="spark spark-a">✳</div><div class="spark spark-b">✦</div><div class="spark spark-c">+</div>
+      </div>
+      <a class="scroll-hint" href="#about"><span class="scroll-wheel"></span> ROLE PARA EXPLORAR</a>
+    </section>
+
+    <section class="ticker" aria-label="Tecnologias em destaque"><div class="ticker-track">
+      <span>PHP</span><b>✳</b><span>JAVASCRIPT</span><b>✳</b><span>HTML & CSS</span><b>✳</b><span>MYSQL</span><b>✳</b><span>GIT</span><b>✳</b><span>LARAVEL</span><b>✳</b><span>NODE.JS</span><b>✳</b>
+      <span>PHP</span><b>✳</b><span>JAVASCRIPT</span><b>✳</b><span>HTML & CSS</span><b>✳</b><span>MYSQL</span><b>✳</b><span>GIT</span><b>✳</b><span>LARAVEL</span><b>✳</b><span>NODE.JS</span><b>✳</b>
+    </div></section>
+
+    <section class="section about-section" id="about">
+      <div class="section-label reveal"><span>01 / SOBRE MIM</span><span class="label-rule"></span></div>
+      <div class="about-layout">
+        <h2 class="section-title reveal">Curiosidade que<br>vira <span class="gradient-text">projeto.</span></h2>
+        <div class="about-text reveal">
+          <p>Gosto de entender como as coisas funcionam e transformar o que aprendo em aplicações reais. Tenho direcionado meus estudos para desenvolvimento web, com atenção especial à lógica e ao backend.</p>
+          <p>Este portfólio acompanha minha evolução: aqui vou reunir projetos, experiências práticas e as tecnologias com que venho trabalhando e estudando.</p>
+          <div class="about-note"><span class="note-icon">↳</span><span>Aprender na prática. Construir com intenção. Evoluir sempre.</span></div>
+        </div>
+      </div>
+      <div class="principles">
+        <article class="principle reveal"><span class="principle-number">01</span><div class="principle-icon">⌘</div><h3>Aprender fazendo</h3><p>Transformo conceitos em prática por meio de projetos próprios.</p></article>
+        <article class="principle reveal"><span class="principle-number">02</span><div class="principle-icon">⟡</div><h3>Resolver problemas</h3><p>Gosto de trabalhar a lógica por trás de cada funcionalidade.</p></article>
+        <article class="principle reveal"><span class="principle-number">03</span><div class="principle-icon">↗</div><h3>Melhorar sempre</h3><p>Refino meu código e minhas soluções a cada nova versão.</p></article>
+      </div>
+    </section>
+
+    <section class="section stack-section" id="stack">
+      <div class="section-label reveal"><span>02 / TECNOLOGIAS</span><span class="label-rule"></span></div>
+      <div class="stack-heading reveal"><h2 class="section-title">Minha <span class="gradient-text">toolbox.</span></h2><p>Tecnologias que utilizo ou estou estudando para desenvolver aplicações.</p></div>
+      <div class="stack-groups">
+        <div class="stack-group reveal"><div class="stack-group-title"><span class="group-symbol">{ }</span><div><h3>Linguagens & Web</h3><p>Fundamentos para construir aplicações</p></div></div>
+          <div class="tech-grid">
+            <div class="tech-card"><span class="tech-icon php">php</span><span>PHP</span><small>Linguagem</small></div>
+            <div class="tech-card"><span class="tech-icon js">JS</span><span>JavaScript</span><small>Linguagem</small></div>
+            <div class="tech-card"><span class="tech-icon java">J</span><span>Java</span><small>Linguagem</small></div>
+            <div class="tech-card"><span class="tech-icon html">&lt;/&gt;</span><span>HTML</span><small>Estrutura web</small></div>
+            <div class="tech-card"><span class="tech-icon css">#</span><span>CSS</span><small>Estilização</small></div>
+          </div>
+        </div>
+        <div class="stack-group reveal"><div class="stack-group-title"><span class="group-symbol">⌘</span><div><h3>Ferramentas & Ecossistema</h3><p>Stack de desenvolvimento</p></div></div>
+          <div class="tech-grid">
+            <div class="tech-card"><span class="tech-icon laravel">L</span><span>Laravel</span><small>Framework PHP</small></div>
+            <div class="tech-card"><span class="tech-icon node">JS</span><span>Node.js</span><small>Runtime JavaScript</small></div>
+            <div class="tech-card"><span class="tech-icon mysql">▤</span><span>MySQL</span><small>Banco de dados</small></div>
+            <div class="tech-card"><span class="tech-icon git">⑂</span><span>Git</span><small>Versionamento</small></div>
+          </div>
+        </div>
+      </div>
+      <p class="stack-disclaimer reveal"><span>✳</span> Meu nível de experiência varia entre as tecnologias; sigo estudando e colocando o conhecimento em prática.</p>
+    </section>
+
+    <section class="section projects-section" id="projects">
+      <div class="section-label reveal"><span>03 / PROJETO EM DESTAQUE</span><span class="label-rule"></span></div>
+      <div class="projects-heading reveal"><div><h2 class="section-title">Feito com <span class="gradient-text">código.</span></h2><p>Um projeto prático que faz parte da minha evolução como desenvolvedor.</p></div><span class="project-count">01 PROJETO</span></div>
+      <article class="project-card reveal">
+        <div class="project-visual">
+          <div class="pokedex-window">
+            <div class="window-top"><span class="window-dots"><i></i><i></i><i></i></span><span>POKÉDEX / API EXPLORER</span><span class="window-menu">•••</span></div>
+            <div class="pokedex-content"><div class="poke-copy"><span class="poke-kicker">Nº 025 · ELECTRIC</span><h3>Pikachu</h3><p>Explore the Pokémon world.</p><div class="poke-search"><span>Search Pokémon...</span><b>⌕</b></div><div class="poke-tags"><i>Electric</i><i>API data</i></div></div><div class="poke-art"><div class="poke-circle"></div><div class="poke-bolt">ϟ</div><span class="poke-orbit"></span></div></div>
+            <div class="pokedex-bottom"><span>POKÉDEX</span><span>POWERED BY POKEAPI</span></div>
+          </div>
+          <div class="visual-orb orb-left"></div><div class="visual-orb orb-right"></div>
+        </div>
+        <div class="project-info">
+          <div class="project-topline"><span class="project-type">APLICAÇÃO WEB</span><span class="project-index">01 — 01</span></div>
+          <h3>Pokédex</h3>
+          <p>Uma aplicação web para pesquisar Pokémon e consultar informações usando uma API externa. O projeto explora lógica, integração com API, tratamento de dados e estilização de interface.</p>
+          <div class="project-tags"><span>PHP</span><span>HTML</span><span>CSS</span><span>PokéAPI</span></div>
+          <div class="project-links"><a class="text-link" data-link="pokedexGithub" href="https://github.com/" target="_blank" rel="noreferrer">Ver código no GitHub <span>↗</span></a><a class="text-link" data-link="pokedexDemo" href="#projects">Ver demonstração <span>↗</span></a></div>
+          <p class="edit-hint">Os links deste projeto são configurados no arquivo <code>script.js</code>.</p>
+        </div>
+      </article>
+      <div class="future-project reveal"><span class="future-icon">＋</span><div><h3>Mais projetos em construção</h3><p>Novos projetos vão aparecer aqui quando estiverem prontos.</p></div><span class="future-status">EM BREVE</span></div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-glow"></div>
+      <div class="section-label reveal"><span>04 / CONTATO</span><span class="label-rule"></span></div>
+      <div class="contact-content reveal"><span class="eyebrow">VAMOS CONECTAR?</span><h2>O próximo projeto<br>pode começar <span class="gradient-text">aqui.</span></h2><p>Estou construindo minha trajetória em desenvolvimento de software. Vamos trocar uma ideia?</p><div class="contact-actions"><a class="button button-primary" data-link="email" href="mailto:seuemail@exemplo.com">Entrar em contato <span>↗</span></a><a class="button button-ghost" data-link="linkedin" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a></div></div>
+      <footer><a class="brand" href="#home"><span class="brand-mark">{ }</span><span>dev<span class="accent">.folio</span></span></a><span>DESENVOLVIDO COM CURIOSIDADE & CAFÉ</span><a href="#home" class="back-top">VOLTAR AO TOPO ↑</a></footer>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
