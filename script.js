@@ -8,8 +8,8 @@ const PORTFOLIO = {
   linkedin: "https://www.linkedin.com/in/nelson-allein-neto-650403352/",
   email: "nelsonalleinneto@gmail.com",
   pokedexGithub: "https://github.com/neto750/Pok-dex",
-  // Adicione aqui a URL pública quando hospedar a Pokédex. Por enquanto, deixe vazio.
-  pokedexDemo: ""
+  // Demo web estática (ideal para GitHub Pages; a versão PHP original está no repositório).
+  pokedexDemo: "pokedex-demo.html"
 };
 
 // Aplica o nome configurado aos elementos da página.
@@ -26,13 +26,17 @@ document.querySelectorAll("[data-link]").forEach((el) => {
     value = value ? `mailto:${value}` : "";
   }
 
-  // O link de demonstração é opcional enquanto a Pokédex não estiver hospedada.
-  if (key === "pokedexDemo" && !value) {
+  // A demo é um arquivo estático ao lado do portfólio, então também funciona em GitHub Pages.
+  if (key === "pokedexDemo" && value) {
+    el.href = value;
+    el.classList.remove("link-placeholder", "demo-link-pending");
+    el.removeAttribute("aria-disabled");
+  } else if (key === "pokedexDemo" && !value) {
     el.classList.add("link-placeholder");
     el.setAttribute("aria-disabled", "true");
     el.addEventListener("click", (event) => {
       event.preventDefault();
-      alert("A Pokédex ainda não tem uma demonstração online. Você pode usar o link do GitHub para ver o código.");
+      alert("A demo web da Pokédex ainda não está configurada. Confira o arquivo script.js.");
     });
   } else if (!value || value.includes("SEU-USUARIO") || value.includes("SEU-PERFIL") || value.includes("seuemail@exemplo.com")) {
     el.classList.add("link-placeholder");
@@ -45,6 +49,57 @@ document.querySelectorAll("[data-link]").forEach((el) => {
     el.href = value;
   }
 });
+
+// Contato: abre o Gmail no navegador para não depender de um aplicativo de e-mail instalado.
+const emailLink = document.getElementById("emailLink");
+const directEmailLink = document.getElementById("directEmailLink");
+if (emailLink && PORTFOLIO.email) {
+  // Link já fica definido no HTML como alternativa caso o JavaScript não carregue.
+  emailLink.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(PORTFOLIO.email)}`;
+  emailLink.target = "_blank";
+  emailLink.rel = "noopener noreferrer";
+  emailLink.setAttribute("aria-label", `Enviar e-mail para ${PORTFOLIO.email} pelo Gmail`);
+}
+if (directEmailLink && PORTFOLIO.email) {
+  directEmailLink.href = `mailto:${PORTFOLIO.email}?subject=${encodeURIComponent("Contato pelo portfólio")}`;
+  directEmailLink.textContent = PORTFOLIO.email;
+}
+
+// Copia o e-mail para a área de transferência como alternativa ao botão de envio.
+const copyEmailButton = document.getElementById("copyEmail");
+const copyStatus = document.getElementById("copyStatus");
+if (copyEmailButton && PORTFOLIO.email) {
+  copyEmailButton.addEventListener("click", async () => {
+    let copied = false;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(PORTFOLIO.email);
+        copied = true;
+      } else {
+        const temporaryInput = document.createElement("textarea");
+        temporaryInput.value = PORTFOLIO.email;
+        temporaryInput.setAttribute("readonly", "");
+        temporaryInput.style.position = "fixed";
+        temporaryInput.style.opacity = "0";
+        document.body.appendChild(temporaryInput);
+        temporaryInput.select();
+        copied = document.execCommand("copy");
+        temporaryInput.remove();
+      }
+    } catch (error) {
+      copied = false;
+    }
+
+    if (copyStatus) {
+      copyStatus.textContent = copied
+        ? "E-mail copiado para a área de transferência ✓"
+        : `Copie este endereço: ${PORTFOLIO.email}`;
+    }
+    copyEmailButton.innerHTML = copied
+      ? 'Copiado! <span aria-hidden="true">✓</span>'
+      : 'Tente novamente <span aria-hidden="true">↻</span>';
+  });
+}
 
 // Animação de entrada conforme as seções aparecem na tela.
 const revealItems = document.querySelectorAll(".reveal");

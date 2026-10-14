@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090f">
+  <meta name="description" content="Demo interativa de consulta de Pokémon por Nelson Allein Neto.">
+  <title>Pokédex Demo — Nelson Allein Neto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pokedex-demo.css">
+  <script src="pokedex-demo.js" defer></script>
+</head>
+<body>
+  <div class="demo-glow" aria-hidden="true"></div>
+  <header class="demo-topbar">
+    <a class="demo-brand" href="index.html#projects"><span class="brand-mark">{ }</span><span>neto<span class="brand-accent">.dev</span></span></a>
+    <div class="topbar-links">
+      <a href="https://github.com/neto750/Pok-dex" target="_blank" rel="noopener noreferrer">Código PHP no GitHub <span>↗</span></a>
+      <a class="back-link" href="index.html#projects">← Voltar ao portfólio</a>
+    </div>
+  </header>
+
+  <main class="demo-main">
+    <section class="demo-intro">
+      <div class="eyebrow"><span class="status-dot"></span> PROJETO INTERATIVO · DEMO WEB</div>
+      <h1>Explore o mundo<br>dos <span class="gradient-text">Pokémon.</span></h1>
+      <p>Pesquise pelo nome ou pelo número da Pokédex para consultar sprite, tipos e atributos. Os dados são carregados diretamente da PokéAPI no navegador.</p>
+      <form id="searchForm" class="search-form">
+        <label for="searchInput">NOME OU ID DO POKÉMON</label>
+        <div class="search-field">
+          <span class="search-symbol">⌕</span>
+          <input id="searchInput" name="pokemon" autocomplete="off" maxlength="60" placeholder="Ex.: pikachu ou 25" value="pikachu" required>
+          <button type="submit" id="searchButton">Pesquisar <span>↗</span></button>
+        </div>
+      </form>
+      <p id="feedback" class="feedback" role="status" aria-live="polite">Carregando Pikachu…</p>
+    </section>
+
+    <section id="pokemonCard" class="pokemon-card" aria-label="Resultado da pesquisa" aria-live="polite">
+      <div class="card-topline"><span id="pokemonNumber">POKÉMON Nº 0025</span><span class="api-label"><i></i> POKÉAPI</span></div>
+      <div class="pokemon-main">
+        <div class="pokemon-copy">
+          <span id="pokemonSpecies" class="species-label">ELECTRIC TYPE</span>
+          <h2 id="pokemonName">Pikachu</h2>
+          <p id="pokemonFlavor">Consulte um Pokémon para ver seus dados.</p>
+          <div id="pokemonTypes" class="type-list"></div>
+          <button id="favoriteButton" class="favorite-button" type="button" aria-pressed="false">☆ <span>Adicionar aos favoritos</span></button>
+        </div>
+        <div class="art-stage">
+          <div class="art-halo"></div>
+          <div class="art-ring art-ring-one"></div>
+          <div class="art-ring art-ring-two"></div>
+          <img id="pokemonImage" class="pokemon-image" src="" alt="" hidden>
+          <div id="imageFallback" class="image-fallback" hidden>?</div>
+          <span id="pokemonNumberGhost" class="number-ghost">025</span>
+        </div>
+      </div>
+      <div class="stats-heading"><span>BASE STATS</span><span>ATRIBUTOS PRINCIPAIS</span></div>
+      <div id="pokemonStats" class="stats-grid">
+        <div class="stat-row"><span>HP</span><div class="stat-track"><i style="width:45%"></i></div><b>--</b></div>
+        <div class="stat-row"><span>ATK</span><div class="stat-track"><i style="width:60%"></i></div><b>--</b></div>
+        <div class="stat-row"><span>DEF</span><div class="stat-track"><i style="width:35%"></i></div><b>--</b></div>
+      </div>
+    </section>
+
+    <div class="pokemon-navigation">
+      <button type="button" id="previousButton" class="nav-button">← <span>Anterior</span></button>
+      <span id="navigationHint">NAVEGAR POR ID</span>
+      <button type="button" id="nextButton" class="nav-button"><span>Próximo</span> →</button>
+    </div>
+
+    <section class="favorites-panel">
+      <div class="favorites-title"><div><span class="eyebrow">SUA COLEÇÃO</span><h2>Favoritos <span class="gradient-text">salvos.</span></h2></div><span id="favoriteCount" class="favorite-count">0 SALVOS</span></div>
+      <p class="favorites-help">Os favoritos são salvos somente neste navegador usando localStorage. Esta demo não utiliza um banco de dados.</p>
+      <div id="favoritesList" class="favorites-list"><span class="empty-favorites">Sua coleção está vazia. Use ☆ para guardar um Pokémon.</span></div>
+    </section>
+
+    <aside class="demo-note"><span class="note-mark">i</span><p><strong>Sobre esta demo:</strong> versão estática para o GitHub Pages, criada para permitir testar a pesquisa online sem servidor PHP. A aplicação original em PHP está no repositório vinculado acima; nesta demo, os dados vêm da PokéAPI e os favoritos ficam no navegador.</p></aside>
+  </main>
+
+  <footer class="demo-footer"><a href="index.html#projects">← Voltar ao portfólio</a><span>DESENVOLVIDO POR NELSON ALLEIN NETO</span><a href="https://github.com/neto750/Pok-dex" target="_blank" rel="noopener noreferrer">VER REPOSITÓRIO ↗</a></footer>
+</body>
+</html>
